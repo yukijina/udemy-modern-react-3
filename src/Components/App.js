@@ -3,9 +3,9 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 
 class App extends React.Component {
-    onSearchSubmit(term) {
+    async onSearchSubmit(term) {
         const ACCESS = process.env.REACT_APP_ACCESS_KEY
-        axios.get('https://api.unsplash.com/search/photos', {
+        const response = await axios.get('https://api.unsplash.com/search/photos', {
             params: {
                 query: term
             },
@@ -13,9 +13,9 @@ class App extends React.Component {
                 Authorization: `Client-ID ${ACCESS}` 
             }
         })
-        .then(response => {
+       
             console.log(response.data.results)
-        })
+        
     }
 
     render(){
