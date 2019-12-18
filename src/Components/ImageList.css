@@ -1,9 +1,10 @@
 .image-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 10px;
-    /* height of the row */
-    grid-auto-rows: 150px;
+    /* only add 10px horizontally. vertical gap is adde by grid-auto-row(10px) */
+    grid-gap: 0 10px;
+    /* height of the row - By setting smaller px, we can display pics without many gaps*/
+    grid-auto-rows: 10px;
 }
 
 .image-list img {
